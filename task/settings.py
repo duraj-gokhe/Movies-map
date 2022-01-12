@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import django_heroku
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!p@qy$5*4%qx(tp&@gdpj*1&=j2c+)e9im-#=ps!=$3(_gbwfq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['movies-map.herokuapp.com','127.0.0.1']
 
@@ -144,4 +145,4 @@ ELASTICSEARCH_DSL = {
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 1000
 
 # Activate django-heroku
-django_heroku.settings(locals)
+django_heroku.settings(locals())
