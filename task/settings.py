@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -139,4 +140,8 @@ ELASTICSEARCH_DSL = {
     },
 }
 
-DATA_UPLOAD_MAX_NUMBER_FIELDS = 1000 # higher than the count of fields
+# higher than the count of fields
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 1000
+
+# Activate django-heroku
+django_heroku.settings(locals)
